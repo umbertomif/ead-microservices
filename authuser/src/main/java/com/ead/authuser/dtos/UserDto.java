@@ -28,7 +28,7 @@ public class UserDto {
     @Size(min= 4, max= 50, groups = UserView.RegistrationPost.class)
     @UsernameConstraint(groups = UserView.RegistrationPost.class)
     @JsonView(UserView.RegistrationPost.class)
-    private String userName;
+    private String username;
 
     @NotBlank(groups = UserView.RegistrationPost.class)
     @Email(groups = UserView.RegistrationPost.class)

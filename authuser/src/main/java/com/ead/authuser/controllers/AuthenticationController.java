@@ -18,7 +18,7 @@ import java.time.ZoneId;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/users")
+@RequestMapping("/auth")
 public class AuthenticationController {
 
     @Autowired
@@ -29,7 +29,7 @@ public class AuthenticationController {
             @RequestBody @Validated(UserDto.UserView.RegistrationPost.class)
             @JsonView(UserDto.UserView.RegistrationPost.class) UserDto userDto
     ) {
-        if (userService.existsByUsername(userDto.getUserName())) {
+        if (userService.existsByUsername(userDto.getUsername())) {
             return ResponseEntity.status(HttpStatus.CONFLICT).body("Error: Username is Already Taken");
         }
         if (userService.existsByEmail(userDto.getEmail())) {

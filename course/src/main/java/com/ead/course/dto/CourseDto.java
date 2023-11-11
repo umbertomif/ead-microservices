@@ -9,7 +9,6 @@ import java.util.UUID;
 
 @Data
 public class CourseDto {
-
     @NotBlank
     private String name;
     @NotBlank

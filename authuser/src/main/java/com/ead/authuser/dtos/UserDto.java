@@ -16,7 +16,7 @@ public class UserDto {
 
     public interface UserView {
         public static interface RegistrationPost{}
-        public static interface USerPut{}
+        public static interface UserPut{}
         public static interface PasswordPut{}
         public static interface ImagePut{}
 
@@ -45,13 +45,13 @@ public class UserDto {
     @JsonView(UserView.PasswordPut.class)
     private String oldPassword;
 
-    @JsonView({UserView.RegistrationPost.class, UserView.USerPut.class})
+    @JsonView({UserView.RegistrationPost.class, UserView.UserPut.class})
     private String fullName;
 
-    @JsonView({UserView.RegistrationPost.class, UserView.USerPut.class})
+    @JsonView({UserView.RegistrationPost.class, UserView.UserPut.class})
     private String phoneNumber;
 
-    @JsonView({UserView.RegistrationPost.class, UserView.USerPut.class})
+    @JsonView({UserView.RegistrationPost.class, UserView.UserPut.class})
     private String cpf;
 
     @NotBlank(groups = UserView.ImagePut.class)

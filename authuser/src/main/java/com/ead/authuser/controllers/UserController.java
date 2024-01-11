@@ -50,17 +50,17 @@ public class UserController {
         if (userModelOptional.isEmpty()) {
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: User not found.");
         }
-        return  ResponseEntity.status(HttpStatus.OK).body(userModelOptional.get());
+        return ResponseEntity.status(HttpStatus.OK).body(userModelOptional.get());
     }
 
     @DeleteMapping("/{userId}")
     public ResponseEntity<Object> deleteUser(@PathVariable(value = "userId") UUID userId){
         Optional<UserModel> userModelOptional = userService.findById(userId);
         if (userModelOptional.isEmpty()){
-            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: User not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: User not found.");
         }
         userService.delete(userModelOptional.get());
-        return  ResponseEntity.status(HttpStatus.OK).body("User deleted successfully.");
+        return ResponseEntity.status(HttpStatus.OK).body("User deleted successfully.");
     }
 
     @PutMapping("/{userId}")

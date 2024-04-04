@@ -69,7 +69,7 @@ public class CourseUserController {
             }
         }
         CourseUserModel courseUserModel = courseModelOptional.get().convertToCourseUserModel(subscriptionDto.getUserId());
-        CourseUserModel courseUserModelResult = courseUserService.save(courseUserModel);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Subscription created successfully.");
+        CourseUserModel courseUserModelResult = courseUserService.saveAndSendSubscriptionUserInCourse(courseUserModel);
+        return ResponseEntity.status(HttpStatus.CREATED).body(courseUserModelResult);
     }
 }

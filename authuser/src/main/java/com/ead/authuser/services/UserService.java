@@ -10,7 +10,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface UserService {
-    List<UserModel> findAll();
+
     Optional<UserModel> findById(UUID userId);
 
     void delete(UserModel userModel);

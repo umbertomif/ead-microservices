@@ -32,7 +32,7 @@ public class CourseClient {
     @Value("${ead.api.url.course}")
     String REQUEST_URL_COURSE;
 
-    public Page<CourseDto> getAllCoursesByUser(Pageable pageable, UUID userId) {
+    public Page<CourseDto> getAllCoursesByUser(UUID userId, Pageable pageable) {
         List<CourseDto> searchResult = null;
         String url = REQUEST_URL_COURSE + utilsService.createUrlGetAllCoursesByUser(userId, pageable);
         log.debug("Request URL: {}", url);
@@ -47,5 +47,10 @@ public class CourseClient {
         }
         log.info("Ending request /courses userId {}", userId);
         return new PageImpl<>(searchResult);
+    }
+
+    public void deleteUserInCourse(UUID userId) {
+        String url = REQUEST_URL_COURSE + "/courses/users/" + userId;
+        restTemplate.exchange(url, HttpMethod.DELETE, null, String.class);
     }
 }

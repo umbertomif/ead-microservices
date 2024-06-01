@@ -1,7 +1,7 @@
 package com.ead.course.validation;
 
 
-import com.ead.course.dto.CourseDto;
+import com.ead.course.dtos.CourseDto;
 import com.ead.course.enums.UserType;
 import com.ead.course.models.UserModel;
 import com.ead.course.services.UserService;

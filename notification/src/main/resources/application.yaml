@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: ead-notification-service
+  config:
+    #import: 'optional:configserver:' # the eureka client will get the uri, if config server is unavailable then, the service will use the local configuration    import: 'optional:configserver:' # the eureka client will get the uri, if config server is unavailable then, the service will use the local configuration
+    import: 'configserver:' # the eureka client will get the uri, if config server is unavailable then, the service will use the local configuration
+  cloud:
+    config:
+      discovery:
+        serviceId: ead-config-server

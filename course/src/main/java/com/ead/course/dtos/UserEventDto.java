@@ -1,4 +1,4 @@
-package com.ead.course.dto;
+package com.ead.course.dtos;
 
 import com.ead.course.models.UserModel;
 import lombok.Data;

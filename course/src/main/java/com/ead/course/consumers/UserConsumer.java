@@ -1,6 +1,6 @@
 package com.ead.course.consumers;
 
-import com.ead.course.dto.UserEventDto;
+import com.ead.course.dtos.UserEventDto;
 import com.ead.course.enums.ActionType;
 import com.ead.course.services.UserService;
 import org.springframework.amqp.core.ExchangeTypes;

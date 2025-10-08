@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .anyRequest().authenticated()
                 .and()
-                .csrf().disable()
+                .csrf().disable() // Eureka Clients doesnt have those tokens, then we need to disable it.
                 .formLogin();
     }
 

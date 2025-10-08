@@ -23,7 +23,7 @@ public class UserDetailsImpl implements UserDetails {
     @JsonIgnore
     private String password;
     private String email;
-    private Collection<? extends GrantedAuthority> authorities;
+    private Collection<? extends GrantedAuthority> authorities; // The Role Model implements the GrantedAuthority
 
     public static UserDetailsImpl build(UserModel userModel) {
         List<GrantedAuthority> authorities = userModel.getRoles().stream()
